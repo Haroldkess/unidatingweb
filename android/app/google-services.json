@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "888337382632",
+    "project_id": "uni-dating-51be5",
+    "storage_bucket": "uni-dating-51be5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888337382632:android:5d4fd157d7222ef02a9d5d",
+        "android_client_info": {
+          "package_name": "com.tlptech.uni_dating"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888337382632-helemstd3vae7qh6jt6te6eugae44mtv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tlptech.uni_dating",
+            "certificate_hash": "a94145781e21a5507130add56c80d67ebc03db82"
+          }
+        },
+        {
+          "client_id": "888337382632-iqsp7k836mvr2pnqctooo9ras5ticcic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3k2AyEtGwXm7X8ch8PzpoMW0hQGttL3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888337382632-iqsp7k836mvr2pnqctooo9ras5ticcic.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "888337382632-u3jdtdjm3ifrkneh041o22peddek1dkm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tlptech.unidating"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888337382632:android:c10d57095015e98e2a9d5d",
+        "android_client_info": {
+          "package_name": "com.tlptech.unidatingwebapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888337382632-iqsp7k836mvr2pnqctooo9ras5ticcic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3k2AyEtGwXm7X8ch8PzpoMW0hQGttL3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888337382632-iqsp7k836mvr2pnqctooo9ras5ticcic.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "888337382632-u3jdtdjm3ifrkneh041o22peddek1dkm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tlptech.unidating"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
