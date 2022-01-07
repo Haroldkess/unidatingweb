@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
 
                     Text(
-                      "Let's Kick Now !",
+                      "Find Someone Now !",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 28,
@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
 
                     Text(
-                      "It's easy and takes less than 30 seconds",
+                      "It's easy",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14,
@@ -167,17 +167,17 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
 
-            Align(
-              alignment: Alignment.topRight,
-              child: Padding(
-                padding: EdgeInsets.all(32),
-                child: Icon(
-                  Icons.menu,
-                  color: Color(0xFFFE4350),
-                  size: 28,
-                ),
-              ),
-            ),
+            // Align(
+            //   alignment: Alignment.topRight,
+            //   child: Padding(
+            //     padding: EdgeInsets.all(32),
+            //     child: Icon(
+            //       Icons.menu,
+            //       color: Color(0xFFFE4350),
+            //       size: 28,
+            //     ),
+            //   ),
+            // ),
 
             Align(
               alignment: Alignment.bottomRight,
@@ -214,18 +214,18 @@ class _MyHomePageState extends State<MyHomePage> {
               duration: Duration(milliseconds: 500),
 
               //Animation 1
-              //transitionBuilder: (widget, animation) => RotationTransition(
-              //  turns: animation,
-              //  child: widget,
-              //),
-              //switchOutCurve: Curves.easeInOutCubic,
-              //switchInCurve: Curves.fastLinearToSlowEaseIn,
+              transitionBuilder: (widget, animation) => RotationTransition(
+               turns: animation,
+               child: widget,
+              ),
+              switchOutCurve: Curves.easeInOutCubic,
+              switchInCurve: Curves.fastLinearToSlowEaseIn,
 
               //Animation 2
-              transitionBuilder: (widget, animation) => ScaleTransition(
-                  child: widget,
-                  scale: animation
-              ),
+              // transitionBuilder: (widget, animation) => ScaleTransition(
+              //     child: widget,
+              //     scale: animation
+              // ),
 
               child: selectedOption == Option.LogIn
                   ? LogIn(

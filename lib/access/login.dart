@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 import 'action_button.dart';
@@ -67,35 +68,35 @@ class _LogInState extends State<LogIn> {
                         height: 32,
                       ),
 
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Email',
-                          labelText: 'Email',
-                          suffixIcon: Icon(
-                            Icons.mail_outline,
-                          ),
-                        ),
-                      ),
+                      // TextField(
+                      //   decoration: InputDecoration(
+                      //     hintText: 'Email',
+                      //     labelText: 'Email',
+                      //     suffixIcon: Icon(
+                      //       Icons.mail_outline,
+                      //     ),
+                      //   ),
+                      // ),
 
                       SizedBox(
                         height: 32,
                       ),
 
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Password',
-                          labelText: 'Password',
-                          suffixIcon: Icon(
-                            Icons.lock_outline,
-                          ),
-                        ),
-                      ),
+                      // TextField(
+                      //   decoration: InputDecoration(
+                      //     hintText: 'Password',
+                      //     labelText: 'Password',
+                      //     suffixIcon: Icon(
+                      //       Icons.lock_outline,
+                      //     ),
+                      //   ),
+                      // ),
 
                       SizedBox(
                         height: 64,
                       ),
 
-                      actionButton("Log In"),
+                      actionButton("Log In with", FontAwesomeIcons.google),
 
                       SizedBox(
                         height: 32,
@@ -106,7 +107,7 @@ class _LogInState extends State<LogIn> {
                         children: [
 
                           Text(
-                            "You do not have an account?",
+                            "Try other options ?",
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 14,
@@ -125,7 +126,7 @@ class _LogInState extends State<LogIn> {
                               children: [
 
                                 Text(
-                                  "Sign Up",
+                                  "Phone",
                                   style: TextStyle(
                                     color: kPrimaryColor,
                                     fontSize: 14,

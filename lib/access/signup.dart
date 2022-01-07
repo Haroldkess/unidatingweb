@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 import 'action_button.dart';
@@ -44,7 +45,7 @@ class _SignUpState extends State<SignUp> {
                     children: [
 
                       Text(
-                        "SIGN UP",
+                        "Login",
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.grey[700],
@@ -67,15 +68,29 @@ class _SignUpState extends State<SignUp> {
                         height: 32,
                       ),
 
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Name',
-                          labelText: 'Name',
-                          suffixIcon: Icon(
-                            Icons.person_outline,
-                          ),
-                        ),
+                      // TextField(
+                      //   decoration: InputDecoration(
+                      //     hintText: 'Name',
+                      //     labelText: 'Name',
+                      //     suffixIcon: Icon(
+                      //       Icons.person_outline,
+                      //     ),
+                      //   ),
+                      // ),
+
+                      SizedBox(
+                        height: 32,
                       ),
+
+                      // TextField(
+                      //   decoration: InputDecoration(
+                      //     hintText: 'Email',
+                      //     labelText: 'Email',
+                      //     suffixIcon: Icon(
+                      //       Icons.mail_outline,
+                      //     ),
+                      //   ),
+                      // ),
 
                       SizedBox(
                         height: 32,
@@ -83,24 +98,10 @@ class _SignUpState extends State<SignUp> {
 
                       TextField(
                         decoration: InputDecoration(
-                          hintText: 'Email',
-                          labelText: 'Email',
+                          hintText: 'Phone',
+                          labelText: 'Phone',
                           suffixIcon: Icon(
-                            Icons.mail_outline,
-                          ),
-                        ),
-                      ),
-
-                      SizedBox(
-                        height: 32,
-                      ),
-
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Password',
-                          labelText: 'Password',
-                          suffixIcon: Icon(
-                            Icons.lock_outline,
+                            Icons.phone_android,
                           ),
                         ),
                       ),
@@ -109,7 +110,7 @@ class _SignUpState extends State<SignUp> {
                         height: 64,
                       ),
 
-                      actionButton("Create Account"),
+                      actionButton("Login in with", FontAwesomeIcons.phone),
 
                       SizedBox(
                         height: 32,
@@ -120,7 +121,7 @@ class _SignUpState extends State<SignUp> {
                         children: [
 
                           Text(
-                            "Already have an account?",
+                            "Try other options ?",
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 14,
@@ -139,7 +140,7 @@ class _SignUpState extends State<SignUp> {
                               children: [
 
                                 Text(
-                                  "Log In",
+                                  "Google",
                                   style: TextStyle(
                                     color: kPrimaryColor,
                                     fontSize: 14,

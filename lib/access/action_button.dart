@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 import 'constants.dart';
 
-Widget actionButton(String text){
+Widget actionButton(String text, IconData iconData){
   return Container(
     height: 50,
     width: double.infinity,
@@ -22,13 +23,22 @@ Widget actionButton(String text){
       ],
     ),
     child: Center(
-      child: Text(
-        text,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            text,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Padding(
+            padding:  EdgeInsets.only(left: 7.0),
+            child: Icon(iconData,color: Colors.grey,),
+          )
+        ],
       ),
     ),
   );
