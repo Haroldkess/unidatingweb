@@ -1,12 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:unidatingwebapp/chat/add_message_screen.dart';
 import 'package:unidatingwebapp/responsive.dart';
 
 import 'access/constants.dart';
 import 'access/login.dart';
 
 import 'access/signup.dart';
+import 'backend/google_sign_in.dart';
 
 
 Future<void> main() async {
@@ -17,19 +21,73 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  // MaterialApp(
+  // title: 'Uni Dating',
+  // theme: ThemeData(
+  // primaryColor: kPrimaryColor,
+  // visualDensity: VisualDensity.adaptivePlatformDensity,
+  // textTheme: GoogleFonts.secularOneTextTheme(),
+  // primarySwatch: Colors.blue,
+  // ),
+  //
+  // home: MyHomePage(title: 'UNI'),
+  //
+  // );
+  Widget _getScreenId() {
+    return StreamBuilder(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (BuildContext context, snapshot) {
+
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicator(),);
+        }
+        else if (snapshot.hasError)
+        {
+          return Center(
+            child: Text("Something went wrong!!!"),
+          );
+        }
+        if (snapshot.hasData)
+        {
+          Provider.of<GoogleSignInProvider>(context, listen:  false);
+          final user = FirebaseAuth.instance.currentUser!;
+          print("this is your id ${user.uid}");
+
+          return AddMessageScreen(
+            currentUserId: user.uid,
+
+          );
+        }
+
+        else {
+          // Provider.of<GoogleSignInProvider>(context, listen: false);
+          return MyHomePage(
+            title: "Uni Dating",
+            );
+        }
+
+      },
+    );
+
+  }
   @override
   Widget build(BuildContext context) {
 
-    return MaterialApp(
-      title: 'Uni Dating',
-      theme: ThemeData(
-        primaryColor: kPrimaryColor,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: GoogleFonts.secularOneTextTheme(),
-        primarySwatch: Colors.blue,
-      ),
+    return ChangeNotifierProvider(
+      create: (context) => GoogleSignInProvider(),
+      builder: (context, child){
+        return MaterialApp(
+          title: 'Uni Dating',
+          theme: ThemeData(
+            primaryColor: kPrimaryColor,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+            textTheme: GoogleFonts.secularOneTextTheme(),
+            primarySwatch: Colors.blue,
+          ),
+          home: _getScreenId()
 
-      home: MyHomePage(title: 'UNI'),
+        );
+      },
 
     );
   }
@@ -38,7 +96,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String? currentUserId;
+  MyHomePage({Key? key, required this.title, this.currentUserId}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -62,13 +121,13 @@ class _MyHomePageState extends State<MyHomePage> {
   bool login = true;
   Option selectedOption = Option.LogIn;
 
-  @override
-  Widget build(BuildContext context) {
+
+  Widget homeUi(BuildContext context)
+  {
     Size size = MediaQuery.of(context).size;
 
     print(size.height);
     print(size.width);
-
     return Scaffold(
       body: Container(
         width: size.width,
@@ -215,8 +274,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
               //Animation 1
               transitionBuilder: (widget, animation) => RotationTransition(
-               turns: animation,
-               child: widget,
+                turns: animation,
+                child: widget,
               ),
               switchOutCurve: Curves.easeInOutCubic,
               switchInCurve: Curves.fastLinearToSlowEaseIn,
@@ -248,6 +307,13 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+
+    return homeUi(context);
   }
 }
 
