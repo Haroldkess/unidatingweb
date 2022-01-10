@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:unidatingwebapp/chat/add_message_screen.dart';
 import 'package:unidatingwebapp/responsive.dart';
+import 'package:unidatingwebapp/splashScreen.dart';
 
 import 'access/constants.dart';
 import 'access/login.dart';
@@ -53,9 +54,8 @@ class MyApp extends StatelessWidget {
           final user = FirebaseAuth.instance.currentUser!;
           print("this is your id ${user.uid}");
 
-          return AddMessageScreen(
+          return SplashScreen(
             currentUserId: user.uid,
-
           );
         }
 
